@@ -84,6 +84,7 @@ if (window.Element && !Element.prototype.closest) {
 		if (typeof selector !== 'string' && selector.contains) {
 			return selector === target || selector.contains(target);
 		}
+		if ([window,'window'].indexOf(event.target) > -1) {return false;}
 		return target.closest(selector);
 	};
 
